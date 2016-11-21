@@ -1,6 +1,7 @@
 FROM alpine:edge
 
-RUN cat /etc/apk/repositories \
+RUN echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+    && cat /etc/apk/repositories \
     && apk update && apk upgrade \
     && apk add php7 nginx supervisor php7-pdo_mysql php7-mcrypt php7-fpm \
         php7-mbstring php7-opcache curl php7-json php7-phar php7-openssl \
