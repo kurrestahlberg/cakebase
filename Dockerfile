@@ -10,6 +10,8 @@ RUN echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositorie
     && curl -sS https://getcomposer.org/installer \
         | /usr/bin/php7 -- --install-dir=/usr/local/composer/bin/ --filename=composer \
     && apk del gcc musl-dev linux-headers libffi-dev augeas-dev python-dev curl \
-    && rm -rf /var/www/*
+    && rm -rf /var/www/* \
+    /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp /root/.gnupg \
+    /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
 
 expose 80
