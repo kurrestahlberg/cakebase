@@ -1,8 +1,6 @@
-FROM alpine:edge
+FROM alpine:latest
 
-RUN echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
-    && cat /etc/apk/repositories \
-    && apk update && apk upgrade \
+RUN apk update && apk upgrade \
     && apk add \
         php7 \
         nginx \
