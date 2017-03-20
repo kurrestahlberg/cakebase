@@ -1,6 +1,7 @@
 FROM alpine:latest
 
-RUN apk update && apk upgrade \
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+    && apk update && apk upgrade \
     && apk add \
         php7 \
         nginx \
@@ -25,12 +26,22 @@ RUN apk update && apk upgrade \
         php7-gd \
         php7-xml \
         php7-dom \
+        nodejs \
+        php7-curl \
+        php7-redis \
+        git \
+        ca-certificates \
+        filebeat \
+        logrotate \
     && mkdir -p /usr/local/composer/bin \
     && curl -sS https://getcomposer.org/installer \
         | /usr/bin/php7 -- --install-dir=/usr/local/composer/bin/ --filename=composer \
     && apk del gcc musl-dev linux-headers libffi-dev augeas-dev python-dev curl \
     && rm -rf /var/www/* \
     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp /root/.gnupg \
-    /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
+    /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html \
+    && sed -i -e s-nginx:x:100:101:nginx:/var/lib/nginx:/sbin/nologin-nginx:x:1001:101:nginx:/var/lib/nginx:/sbin/nologin- /etc/passwd \
+    && chown -R nginx.nginx /var/lib/nginx \
+    && update-ca-certificates
 
 expose 80
