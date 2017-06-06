@@ -30,6 +30,7 @@ RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/ap
         nodejs-npm \
         php7-curl \
         php7-redis \
+        php7-tokenizer \
         git \
         ca-certificates \
     && mkdir -p /usr/local/composer/bin \
