@@ -29,11 +29,9 @@ RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/ap
         nodejs \
         nodejs-npm \
         php7-curl \
-        php7-redis@testing \
+        php7-redis \
         git \
         ca-certificates \
-        filebeat@testing \
-        logrotate \
     && mkdir -p /usr/local/composer/bin \
     && curl -sS https://getcomposer.org/installer \
         | /usr/bin/php7 -- --install-dir=/usr/local/composer/bin/ --filename=composer \
