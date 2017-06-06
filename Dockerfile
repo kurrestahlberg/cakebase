@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
     && apk update && apk upgrade \
     && apk add \
         php7 \
@@ -27,11 +27,12 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
         php7-xml \
         php7-dom \
         nodejs \
+        nodejs-npm \
         php7-curl \
-        php7-redis \
+        php7-redis@testing \
         git \
         ca-certificates \
-        filebeat \
+        filebeat@testing \
         logrotate \
     && mkdir -p /usr/local/composer/bin \
     && curl -sS https://getcomposer.org/installer \
