@@ -6,6 +6,7 @@ RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/ap
         php7 \
         nginx \
         supervisor \
+        php7-pdo_mysql \
         php7-mcrypt \
         php7-fpm \
         php7-iconv \
