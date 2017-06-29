@@ -33,6 +33,7 @@ RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/ap
         php7-mysqli \
         php7-fileinfo \
         php7-simplexml \
+        php7-mongodb@testing \
         git \
         ca-certificates \
     && mkdir -p /usr/local/composer/bin \
