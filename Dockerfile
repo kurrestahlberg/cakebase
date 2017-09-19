@@ -36,6 +36,7 @@ RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/ap
         php7-mongodb@testing \
         git \
         ca-certificates \
+	php7-tokenizer \
     && mkdir -p /usr/local/composer/bin \
     && curl -sS https://getcomposer.org/installer \
         | /usr/bin/php7 -- --install-dir=/usr/local/composer/bin/ --filename=composer \
