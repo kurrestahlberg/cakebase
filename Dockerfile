@@ -27,8 +27,8 @@ RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/ap
         php7-gd \
         php7-xml \
         php7-dom \
-        nodejs@edge \
-        nodejs-npm@edge \
+        nodejs \
+        nodejs-npm \
         php7-curl \
         php7-redis \
         php7-mysqli \
