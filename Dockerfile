@@ -41,7 +41,7 @@ RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/ap
     && mkdir -p /usr/local/composer/bin \
     && curl -sS https://getcomposer.org/installer \
         | /usr/bin/php7 -- --install-dir=/usr/local/composer/bin/ --filename=composer \
-    && apk del gcc musl-dev linux-headers libffi-dev augeas-dev python-dev curl \
+    && apk del gcc musl-dev linux-headers libffi-dev augeas-dev python-dev \
     && rm -rf /var/www/* \
     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp /root/.gnupg \
     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html \
