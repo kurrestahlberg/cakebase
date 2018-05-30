@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.7
 
 RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
     && echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
@@ -34,7 +34,6 @@ RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/ap
         php7-mysqli \
         php7-fileinfo \
         php7-simplexml \
-        php7-mongodb@testing \
         git \
         ca-certificates \
 	php7-tokenizer \
