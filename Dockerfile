@@ -1,8 +1,9 @@
-FROM alpine:3.7
+FROM alpine:latest
 
-RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
-    && echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
-    && apk update && apk upgrade \
+#RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+#    && echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
+#    && apk update && apk upgrade \
+RUN apk update && apk upgrade \
     && apk add \
         php7 \
         nginx \
