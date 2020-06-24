@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.12
 
 #RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
 #    && echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
